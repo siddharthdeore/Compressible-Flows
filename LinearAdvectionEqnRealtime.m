@@ -9,7 +9,7 @@ clc;
 % iScheme = 4 ==> FTBS
 %iScheme = input('select scheme ');
 
-NX = 127;    % Number of subintervals for discretisation. |--!--!--!--| 40 nodes!
+NX = 63;    % Number of subintervals for discretisation. |--!--!--!--| 40 nodes!
 dx = 1/NX;  % defination of mesh spaceingerrglob(4) = 0
 errglob(4)=0;
 for j=1:NX+1
@@ -84,5 +84,4 @@ for iScheme=1:4
         pause(0.0001);
     end
     pause(1);
-    plot(dxlist,errglob);
 end
