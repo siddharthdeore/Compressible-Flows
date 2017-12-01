@@ -31,6 +31,8 @@ end
 u=y;
 figure('Name','slope of u');
 plot(x,0);
+xlabel('x');
+ylabel('time');
 grid on;
 for i=1:NX+1
     if(mod(i,NX/20)==0)
@@ -45,7 +47,9 @@ for i=1:NX+1
     end
 end
 
-figure('Name','slope of a');
+figure('Name','slope of shock -> a');
+xlabel('x');
+ylabel('time');
 grid on;
 for i=1:NX+1
     if(mod(i,NX/20)==0)
