@@ -18,7 +18,7 @@ slope_disc(NX+1)=0;
 y(NX+1)=0;
 for i=1:NX+1;
     if x(i)<-1
-        y(i)=1;
+        y(i)=-1;
     end
     if x(i)>=-1 && x(i)<=1
         y(i)=0;
@@ -78,7 +78,7 @@ end
 for i=1:NX
     slope_disc(i)=slope_a(i+1)-slope_a(i);
     if(slope_disc(i)>0) % plots fan
-        for j=slope_a(i):0.5:slope_a(i+1)
+        for j=slope_a(i):0.1:slope_a(i+1)
             a_theta=atan(j);
             line([x(i) x(i)-10*cos(a_theta+pi/2)],[0 10*sin(a_theta+pi/2)],'Color','c');
         end
