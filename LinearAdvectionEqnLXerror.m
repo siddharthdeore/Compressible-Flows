@@ -11,8 +11,8 @@ clc;
 
 sigma=0.5;
 c=1;
-errglob=[0 0 0 0 0 0 0];
-for count=5:11
+errglob=[0 0 0 0 0 0 0 0];
+for count=5:12
     elapseT=0;
     NX=2^count - 1;
     dx = 1/NX;  % defination of mesh spaceingerrglob(4) = 0
@@ -22,11 +22,11 @@ for count=5:11
     un=ue;
     while(elapseT<1)
         elapseT=elapseT+dt;
-        unp(1)=un(1) - 0.5*sigma*(un(1)-un(NX));
+        unp(1)=0.5*(un(2)+un(NX)) - 0.5*sigma*(un(2)-un(NX));
         for j=2:NX
-            unp(j)=un(j) - 0.5*sigma*(un(j)-un(j-1));
+            unp(j)=0.5*(un(j+1)+un(j-1)) - 0.5*sigma*(un(j+1)-un(j-1));
         end
-        unp(NX+1)=un(NX+1) - 0.5*sigma*(un(NX+1)-un(NX));
+        unp(NX+1)=0.5*(un(2)+un(NX)) - 0.5*sigma*(un(2)-un(NX));
         un=unp;
     end
     
